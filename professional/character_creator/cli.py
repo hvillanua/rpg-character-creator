@@ -1,5 +1,5 @@
 from character_creator.domain import Character, CharacterClass
-from character_creator.service import DiceRoller, create_character
+from character_creator.service import create_character
 
 
 def ask_name() -> str:
@@ -57,7 +57,7 @@ def display_character(character: Character) -> None:
     print(f"Carisma: {stats.charisma}")
 
 
-def run_cli(dice_roller: DiceRoller) -> None:
+def run_cli() -> None:
     name = ask_name()
     age = ask_age()
     character_class = ask_character_class()
@@ -66,7 +66,6 @@ def run_cli(dice_roller: DiceRoller) -> None:
         name=name,
         age=age,
         character_class=character_class,
-        dice_roller=dice_roller,
     )
 
     display_character(character)

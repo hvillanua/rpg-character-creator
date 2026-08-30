@@ -28,11 +28,12 @@ The professional version solves the same problem using tools and structure that 
 - explicit domain models using dataclasses
 - enums for constrained domain values
 - immutable value objects
-- protocols for dependency boundaries
-- dependency injection for randomness
+- typed dependency injection for randomness
 - separation between domain, application logic and CLI presentation
 - pytest and parameterized tests
 - standard Python project configuration
+
+The application service accepts a small typed roll function. Normal execution uses Python's random number generator by default, while tests provide deterministic functions. The CLI therefore only handles terminal interaction and does not need to know how randomness is implemented.
 
 The goal is not to demonstrate the largest or most sophisticated architecture possible. It is to show what stronger modeling, boundaries and automated testing look like when applied proportionally to a very small problem.
 
